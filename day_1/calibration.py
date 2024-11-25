@@ -3,9 +3,7 @@ from collections.abc import Iterable
 import re
 
 with open('input') as input:
-    raw_readings = input.read()
-
-readings: Iterable[int] = map(int, re.findall(r'([+-]\d+)', raw_readings))
+    readings: Iterable[int] = map(int, re.findall(r'([+-]\d+)', input.read()))
 
 def final_reading(readings: Iterable[int]) -> int:
     return sum(readings)
